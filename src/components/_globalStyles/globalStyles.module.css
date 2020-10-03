@@ -1,0 +1,41 @@
+.formContainer{
+    position: relative;
+    display: block;
+    padding: 30px;
+    margin: 30px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(235,235,235);
+    left: 50%;
+    transform:translate(-50%);
+    width: 700px;
+    background-color: white;
+}
+
+.formContainer  * {
+    display: block
+}
+
+.formContainer .btn{
+    padding: 7px;
+    min-width:150px;
+    margin: 10px 0px;
+    background-color: coral;
+    color: white;
+}
+
+.formContainer .btn-l{
+    padding: 7px;
+    min-width:150px;
+    margin: 10px;
+}
+
+.formContainer input {
+    margin-bottom: 25px;
+    padding: 7px 0px;
+}
+
+.datepicker {
+    z-index: 1000;
+}
+
