@@ -31,7 +31,6 @@ class ExperienceForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const data = this.state;
-        this.props.saveNew(data.id); // removes from state
         this.props.saveExperience(data);
     }
 
@@ -46,6 +45,9 @@ class ExperienceForm extends React.Component {
         })
     }
 
+    handleRemoveExperience() {
+        this.props.removeExperience(this.state.id);
+    }
 
     render() {
         return (
@@ -83,6 +85,7 @@ class ExperienceForm extends React.Component {
 
                         <button className={globalStyles.btn} type="submit">Submit</button>
                     </form>
+                    <button onClick={this.handleRemoveExperience.bind(this)} >remove</button>
                     {this.props.removebtn}
                 </div>
             </div>
@@ -93,6 +96,7 @@ class ExperienceForm extends React.Component {
 const mapDispatchToProps = dispatch => {
     return {
         saveExperience: (data) => dispatch(actions.saveExperience(data)),
+        removeExperience: (id) => dispatch(actions.removeExperience(id)),
     }
 }
 

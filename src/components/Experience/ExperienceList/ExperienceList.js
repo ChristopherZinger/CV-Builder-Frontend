@@ -6,12 +6,8 @@ import * as actions from '../../../store/actions/index';
 class ExperienceList extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            positions: [],
-        }
 
         this.handleAddComponent = this.handleAddComponent.bind(this);
-        this.handleRemoveExperience = this.handleRemoveExperience.bind(this);
         this.handleSaveNewExperience = this.handleSaveNewExperience.bind(this);
     }
 
@@ -20,46 +16,42 @@ class ExperienceList extends React.Component {
     }
 
     handleAddComponent(id) {
-        this.setState({
-            positions: [
-                [{ _id: id }],
-                ...this.state.positions
-            ]
-        })
+        // this.setState({
+        //     positions: [
+        //         [{ _id: id }],
+        //         ...this.state.positions
+        //     ]
+        // })
     }
 
-    handleRemoveExperience(id) {
-        this.props.removeExperience(id);
-    }
+
 
     handleSaveNewExperience(id) {
         console.log('save new : ', id)
-        this.setState({ positions: [] })
+        // this.setState({ positions: [] })
     }
 
     render() {
         const isLoading = this.props.isLoading;
 
         const experienceNodes = (
-            [...this.state.positions, ...this.props.positions].map(p => {
-                const id = p._id || Math.floor(Math.random() * 1000);
-                const removebtn = (
-                    <button onClick={this.handleRemoveExperience.bind(this, id)} >remove</button>
-                );
+            [...this.props.positions].map(p => {
+                const id = p._id;
+
                 return < ExperienceForm key={id}
-                    data={p} removebtn={removebtn}
-                    saveNew={this.handleSaveNewExperience.bind(this, id)} />
+                    data={p}
+                />
             })
         )
 
         const content = isLoading
             ? <div>loading ... </div>
-            : experienceNodes
+            : <div>{experienceNodes}</div>
 
         return (
             <div>
                 <div>
-                    <h1>Experience:</h1>
+
                     <button onClick={this.handleAddComponent}>Add Position</button>
                 </div>
                 { content}
@@ -82,7 +74,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getExperience: () => dispatch(actions.getExperience()),
-        removeExperience: (id) => dispatch(actions.removeExperience(id)),
     }
 }
 
