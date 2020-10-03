@@ -16,11 +16,11 @@ class ExperienceForm extends React.Component {
         const endDate = endDateIsUndefined ? '' : new Date(this.props.data.endDate)
 
         this.state = {
-            startDate: startDate,
-            endDate: endDate,
+            startDate: startDate || '',
+            endDate: endDate || '',
             company: this.props.data.company || '',
             position: this.props.data.position || '',
-            id: this.props.data._id,
+            id: this.props.data._id || '',
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -31,7 +31,9 @@ class ExperienceForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const data = this.state;
+
         this.props.saveExperience(data);
+        if (this.props.clearOnSave) this.props.clearOnSave();
     }
 
     handleChange(e) {
@@ -54,6 +56,9 @@ class ExperienceForm extends React.Component {
             <div>
                 <div className={globalStyles.formContainer}>
                     <form onSubmit={this.handleSubmit}  >
+
+                        <input type="text" value={this.state.id}
+                            name="id" hidden readOnly />
 
                         <label htmlFor="company" >Company:</label>
                         <input type="text" value={this.state.company}
@@ -85,8 +90,10 @@ class ExperienceForm extends React.Component {
 
                         <button className={globalStyles.btn} type="submit">Submit</button>
                     </form>
-                    <button onClick={this.handleRemoveExperience.bind(this)} >remove</button>
-                    {this.props.removebtn}
+
+                    {this.props.children
+                        ? this.props.children
+                        : <button onClick={this.handleRemoveExperience.bind(this)} >remove</button>}
                 </div>
             </div>
         )

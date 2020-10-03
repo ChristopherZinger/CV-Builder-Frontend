@@ -7,40 +7,39 @@ class ExperienceList extends React.Component {
     constructor(props) {
         super(props)
 
-        this.handleAddComponent = this.handleAddComponent.bind(this);
-        this.handleSaveNewExperience = this.handleSaveNewExperience.bind(this);
+        this.state = {
+            showNewItemForm: false,
+        }
+
+        this.handleAddItem = this.handleAddItem.bind(this);
+        this.handleSaveTemplate = this.handleSaveTemplate.bind(this);
     }
 
     componentDidMount() {
         this.props.getExperience();
     }
 
-    handleAddComponent(id) {
-        // this.setState({
-        //     positions: [
-        //         [{ _id: id }],
-        //         ...this.state.positions
-        //     ]
-        // })
+    handleAddItem() {
+        this.setState({ showNewItemForm: !this.state.showNewItemForm })
     }
 
-
-
-    handleSaveNewExperience(id) {
-        console.log('save new : ', id)
-        // this.setState({ positions: [] })
+    handleSaveTemplate() {
+        this.setState({ showNewItemForm: false })
     }
 
     render() {
         const isLoading = this.props.isLoading;
+        const addBtnDisabled = this.state.showNewItemForm;
+        // create Template for new Experience Item
+        const addNewItem = (
+            <ExperienceForm key={"newItem"} data={{}} clearOnSave={this.handleSaveTemplate}>
+                <button onClick={this.handleAddItem} > cancel </button>
+            </ExperienceForm>
+        )
 
         const experienceNodes = (
             [...this.props.positions].map(p => {
-                const id = p._id;
-
-                return < ExperienceForm key={id}
-                    data={p}
-                />
+                return < ExperienceForm key={p._id} data={p} />
             })
         )
 
@@ -50,11 +49,17 @@ class ExperienceList extends React.Component {
 
         return (
             <div>
-                <div>
+                {/* add btn*/}
+                <button onClick={this.handleAddItem} disabled={addBtnDisabled}>
+                    Add Position
+                </button>
 
-                    <button onClick={this.handleAddComponent}>Add Position</button>
-                </div>
-                { content}
+                {/* template for new experience item*/}
+                {this.state.showNewItemForm ? addNewItem : null}
+
+                {/* The list */}
+                {content}
+
             </div >
         )
     }
