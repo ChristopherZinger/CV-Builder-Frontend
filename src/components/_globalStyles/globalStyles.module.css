@@ -1,4 +1,4 @@
-.formContainer{
+.myContainer{
     position: relative;
     display: block;
     padding: 30px;
@@ -12,11 +12,11 @@
     background-color: white;
 }
 
-.formContainer  * {
+.myContainer  * {
     display: block
 }
 
-.formContainer .btn{
+.myContainer .btn{
     padding: 7px;
     min-width:150px;
     margin: 10px 0px;
@@ -24,13 +24,13 @@
     color: white;
 }
 
-.formContainer .btn-l{
+.myContainer .btn-l{
     padding: 7px;
     min-width:150px;
     margin: 10px;
 }
 
-.formContainer input {
+.myContainer input {
     margin-bottom: 25px;
     padding: 7px 0px;
 }
