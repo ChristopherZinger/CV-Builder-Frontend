@@ -1,7 +1,8 @@
 import React from 'react';
 // import EducationList from '../EducationList/EducationList';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
-
+import CVDisplay from '../CVDisplay/CVDisplay';
+import CVList from '../CVList/CVList';
 
 const CVLayout = () => {
     return (
@@ -14,7 +15,14 @@ const CVLayout = () => {
                      and decide which informations should be displayed</p>
             </div>
 
-            {/* <EducationList /> */}
+            <div className="row">
+                <div className="col-3">
+                    <CVList />
+                </div>
+                <div className="col-9">
+                    <CVDisplay />
+                </div>
+            </div>
         </div>
     )
 }
