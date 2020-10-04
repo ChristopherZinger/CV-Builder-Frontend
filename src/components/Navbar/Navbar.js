@@ -7,11 +7,15 @@ class Navbar extends React.Component {
     render() {
         const links = this.props.isAuthenticated
             ? (<Fragment>
+
+                <li className="nav-item">
+                    <Link to='/profile' className="nav-link" >Profile</Link>
+                </li>
                 <li className="nav-item">
                     <Link to='/experience' className="nav-link" >Experience</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='/profile' className="nav-link" >Profile</Link>
+                    <Link to='/education' className="nav-link" >Education</Link>
                 </li>
                 <li className="nav-item">
                     <Link to='/logout' className="nav-link" >Logout </Link>
