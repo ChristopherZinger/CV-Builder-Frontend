@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
-import moment from 'moment';
-
+import { fromatDate } from '../../../utils/time/time';
 
 const ExperienceContainer = props => {
     const [dispState, setDispState] = useState(false);
@@ -30,10 +29,6 @@ const ExperienceContainer = props => {
     )
 }
 
-const fromatDate = date => {
-    return moment(new Date(date))
-        .format("YYYY MMMM")
-}
 
 const ExperienceCard = props => {
     const startDate = fromatDate(props.data.startDate);

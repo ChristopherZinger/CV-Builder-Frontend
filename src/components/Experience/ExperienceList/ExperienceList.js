@@ -39,7 +39,7 @@ class ExperienceList extends React.Component {
         )
 
         const experienceNodes = (
-            [...this.props.positions].map(p => {
+            [...this.props.experienceList].map(p => {
                 return < ExperienceContainer key={p._id} data={p} />
             })
         )
@@ -71,7 +71,7 @@ class ExperienceList extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        positions: state.experienceReducers.positions,
+        experienceList: state.experienceReducers.experienceList,
         isLoading: state.experienceReducers.isLoading,
     }
 }

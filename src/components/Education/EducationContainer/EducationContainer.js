@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import EducationForm from '../EducationForm/EducationForm';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
-import moment from 'moment';
-
+import { fromatDate } from '../../../utils/time/time';
 
 const EducationContainer = props => {
     const [dispState, setDispState] = useState(false);
@@ -28,11 +27,6 @@ const EducationContainer = props => {
 
         </div>
     )
-}
-
-const fromatDate = date => {
-    return moment(new Date(date))
-        .format("YYYY MMMM")
 }
 
 const EducationCard = props => {
