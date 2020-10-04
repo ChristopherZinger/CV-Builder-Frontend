@@ -31,7 +31,6 @@ export const saveExperience = (data) => {
         axios.post('save-experience/', data)
             .then(res => {
                 // res.date should be a list of positions
-                console.log('[ExperienceActions.js] positions: ', res.data)
                 dispatch(experienceSuccess(res.data));
             })
             .catch(err => {

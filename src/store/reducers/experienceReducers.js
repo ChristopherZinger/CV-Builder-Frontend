@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     isLoading: false,
-    positions: [],
+    experienceList: [],
     errors: {}
 };
 
@@ -18,7 +18,7 @@ const experienceSuccess = (state, action) => {
     return ({
         ...state,
         isLoading: false,
-        positions: action.data,
+        experienceList: action.data,
         errors: {}
     })
 }
