@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
-import { fromatDate } from '../../../utils/time/time';
+import { formatDate } from '../../../utils/time/time';
 
 const ExperienceContainer = props => {
     const [dispState, setDispState] = useState(false);
@@ -31,8 +31,8 @@ const ExperienceContainer = props => {
 
 
 const ExperienceCard = props => {
-    const startDate = fromatDate(props.data.startDate);
-    const endDate = fromatDate(props.data.endDate);
+    const startDate = formatDate(props.data.startDate);
+    const endDate = formatDate(props.data.endDate);
 
     return (
         <div>
