@@ -88,12 +88,16 @@ class ExperienceForm extends React.Component {
                             dateFormat="MM/dd/yyyy"
                         />
 
-                        <button className={globalStyles.btn} type="submit">Submit</button>
+                        {/* Submit Btn */}
+                        <button className={globalStyles.btn} type="submit">Save</button>
+
+                        {/* Cancel / Reove Btn */}
+                        {this.props.children
+                            ? this.props.children
+                            : <button onClick={this.handleRemoveExperience.bind(this)} >remove</button>}
                     </form>
 
-                    {this.props.children
-                        ? this.props.children
-                        : <button onClick={this.handleRemoveExperience.bind(this)} >remove</button>}
+
                 </div>
             </div>
         )

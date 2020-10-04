@@ -1,5 +1,6 @@
 import React from 'react';
 import ExperienceForm from '../ExperienceForm/ExperienceForm';
+import ExperienceContainer from '../ExperienceContainer/ExperienceContainer';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 
@@ -39,7 +40,7 @@ class ExperienceList extends React.Component {
 
         const experienceNodes = (
             [...this.props.positions].map(p => {
-                return < ExperienceForm key={p._id} data={p} />
+                return < ExperienceContainer key={p._id} data={p} />
             })
         )
 
@@ -64,9 +65,6 @@ class ExperienceList extends React.Component {
         )
     }
 }
-
-
-
 
 const mapStateToProps = state => {
     return {
