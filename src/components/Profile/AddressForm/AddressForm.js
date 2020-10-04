@@ -40,7 +40,7 @@ class AddressForm extends React.Component {
     render() {
         return (
 
-            < div className={globalStyles.formContainer} >
+            < div className={globalStyles.myContainer} >
                 <h2>Profile</h2>
                 <form onSubmit={this.handleSubmit}>
 
@@ -103,7 +103,7 @@ export default connect(null, mapDispatchToProps)(AddressForm);
 
 //     render() {
 //         return (
-//             <div className={globalStyles.formContainer}>
+//             <div className={globalStyles.myContainer}>
 //                 <Formik
 //                     initialValues={{
 //                         city: this.props.city || '',

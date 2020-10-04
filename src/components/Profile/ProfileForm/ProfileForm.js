@@ -57,7 +57,7 @@ class ProfileForm extends React.Component {
 
     render() {
         return (
-            < div className={globalStyles.formContainer} >
+            < div className={globalStyles.myContainer} >
                 <h2>Profile</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="firstname">First Name</label>
