@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import EducationForm from '../EducationForm/EducationForm';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
 
