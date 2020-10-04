@@ -8,8 +8,13 @@ import CVElementsList from '../CVElementsList/CVElementsList'
 class CVDisplay extends React.Component {
     render() {
         return (
-            <div>
-                display
+            <div className="row">
+                <div className="col-8">
+                    <CVContainer />
+                </div>
+                <div className="row-4">
+                    <CVElementsList />
+                </div>
             </div>
         )
     }

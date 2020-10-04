@@ -6,7 +6,7 @@ class CVElementsList extends React.Component {
     render() {
         return (
             <div>
-                Container
+                Elemets
             </div>
         )
     }
