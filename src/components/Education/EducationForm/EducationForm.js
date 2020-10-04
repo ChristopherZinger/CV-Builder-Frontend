@@ -72,7 +72,8 @@ class EducationForm extends React.Component {
                                 onChange={this.handleChange} name="school"
                                 placeholder="School Name eg. 'Politecnico di Milano' " required />
                         </div>
-
+                    </div>
+                    <div className="row">
                         <div className="col">
                             <label htmlFor="course" >Course Name:</label>
                             <input type="text" value={this.state.course}

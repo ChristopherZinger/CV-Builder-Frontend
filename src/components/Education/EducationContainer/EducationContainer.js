@@ -43,6 +43,8 @@ const EducationCard = props => {
         <div>
             <div className="row">
                 <div className="col"><h4>{props.data.school}</h4></div>
+            </div>
+            <div className="row">
                 <div className="col"><h4>{props.data.title}</h4></div>
                 <div className="col"><h4>{props.data.course}</h4></div>
             </div>
