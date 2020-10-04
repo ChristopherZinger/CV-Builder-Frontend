@@ -12,6 +12,7 @@ import authReducer from './store/reducers/authReducer';
 import profileReducers from './store/reducers/profileReducers';
 import experienceReducers from './store/reducers/experienceReducers';
 import educationReducers from './store/reducers/educationReducers';
+import cvReducers from './store/reducers/cvReducers';
 
 // axios global settings 
 axios.defaults.headers.common['authorization'] = 'AUTH TOKEN';
@@ -25,7 +26,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // reducers
 const rootReducer = combineReducers({
-  authReducer, profileReducers,
+  authReducer, profileReducers, cvReducers,
   experienceReducers, educationReducers
 })
 
