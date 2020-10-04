@@ -1,5 +1,5 @@
 import React from 'react';
-import globalStyles from '../../_globalStyles/globalStyles.module.css';
+import * as gs from '../../_globalStyles/globalStyles.module.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { connect } from 'react-redux';
@@ -57,7 +57,7 @@ class ProfileForm extends React.Component {
 
     render() {
         return (
-            < div className={globalStyles.myContainer} >
+            < div className={gs.myContainer} >
                 <h2>Profile</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="row">
@@ -87,7 +87,7 @@ class ProfileForm extends React.Component {
 
                     <div className="row">
                         <div className="col">
-                            <button className={globalStyles.btn} type="submit">Submit</button>
+                            <button className={[gs.btn, gs.btnImportant].join(' ')} type="submit">Save</button>
                         </div>
                     </div>
                 </form>
