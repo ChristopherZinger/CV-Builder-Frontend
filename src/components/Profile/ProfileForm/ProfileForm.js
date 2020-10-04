@@ -60,24 +60,36 @@ class ProfileForm extends React.Component {
             < div className={globalStyles.myContainer} >
                 <h2>Profile</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="firstname">First Name</label>
-                    <input name="firstname" value={this.state.profile.firstname} onChange={this.handleChange} />
+                    <div className="row">
+                        <div className="col">
+                            <label htmlFor="firstname">First Name</label>
+                            <input name="firstname" value={this.state.profile.firstname} onChange={this.handleChange} />
+                        </div>
+                        <div className="col">
+                            <label htmlFor="lastname">Last Name</label>
+                            <input name="lastname" value={this.state.profile.lastname} onChange={this.handleChange} />
+                        </div>
+                    </div>
 
-                    <label htmlFor="lastname">Last Name</label>
-                    <input name="lastname" value={this.state.profile.lastname} onChange={this.handleChange} />
+                    <div className="row">
+                        <div className="col">
+                            <label htmlFor="birthdate">Birth Date</label>
+                            <DatePicker
+                                selected={this.state.profile.birthdate}
+                                value={this.state.profile.birthdate}
 
-                    <label htmlFor="birthdate">Birth Date</label>
+                                onChange={this.handleDateChange}
+                                name="birthdate"
+                                dateFormat="MM/dd/yyyy"
+                            />
+                        </div>
+                    </div>
 
-                    <DatePicker
-                        selected={this.state.profile.birthdate}
-                        value={this.state.profile.birthdate}
-
-                        onChange={this.handleDateChange}
-                        name="birthdate"
-                        dateFormat="MM/dd/yyyy"
-                    />
-
-                    <button className={globalStyles.btn} type="submit">Submit</button>
+                    <div className="row">
+                        <div className="col">
+                            <button className={globalStyles.btn} type="submit">Submit</button>
+                        </div>
+                    </div>
                 </form>
             </div >
         )

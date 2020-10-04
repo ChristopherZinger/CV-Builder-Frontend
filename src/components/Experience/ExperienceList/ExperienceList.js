@@ -3,6 +3,8 @@ import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import ExperienceContainer from '../ExperienceContainer/ExperienceContainer';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
+import * as gs from '../../_globalStyles/globalStyles.module.css';
+
 
 class ExperienceList extends React.Component {
     constructor(props) {
@@ -34,7 +36,7 @@ class ExperienceList extends React.Component {
         // create Template for new Experience Item
         const addNewItem = (
             <ExperienceForm key={"newItem"} data={{}} clearOnSave={this.handleSaveTemplate}>
-                <button onClick={this.handleAddItem} > cancel </button>
+                <button onClick={this.handleAddItem} className={[gs.btn, gs.btnDisabled].join(' ')} > cancel </button>
             </ExperienceForm>
         )
 
@@ -51,9 +53,12 @@ class ExperienceList extends React.Component {
         return (
             <div>
                 {/* add btn*/}
-                <button onClick={this.handleAddItem} disabled={addBtnDisabled}>
-                    Add Position
-                </button>
+                <div className={gs.defaultContainer}>
+                    <button onClick={this.handleAddItem} className={[gs.btn, gs.btnPrimary].join(' ')} disabled={addBtnDisabled}>
+                        Add Position
+                 </button>
+                </div>
+
 
                 {/* template for new experience item*/}
                 {this.state.showNewItemForm ? addNewItem : null}
