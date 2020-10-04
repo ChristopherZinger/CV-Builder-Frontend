@@ -36,11 +36,23 @@ const profileFail = (state, action) => {
     })
 }
 
+
+const profileReset = (state, action) => {
+    return ({
+        isLoading: false,
+        info: {},
+        contact: {},
+        address: {},
+        errors: {}
+    })
+}
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.PROFILE_START: return profileStart(state, action);
         case actionTypes.PROFILE_SUCCESS: return profileSuccess(state, action);
         case actionTypes.PROFILE_FAIL: return profileFail(state, action);
+        case actionTypes.PROFILE_RESET: return profileReset(state, action);
 
         default:
             return state;

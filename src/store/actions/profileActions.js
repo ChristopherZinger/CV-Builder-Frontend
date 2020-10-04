@@ -21,6 +21,12 @@ export const profileSuccess = (data) => {
     };
 };
 
+export const profileReset = () => {
+    return {
+        type: actionTypes.PROFILE_RESET,
+    };
+};
+
 
 export const saveProfile = (data) => {
     return dispatch => {

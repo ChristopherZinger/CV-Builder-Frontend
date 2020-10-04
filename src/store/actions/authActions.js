@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
-
+import { profileReset } from './profileActions'
 
 // GLOBAL TIMER - for refresh token timeout
 let TIMER;
@@ -75,6 +75,7 @@ export const auth = (email, password, isSignup) => {
                 axios.defaults.headers.common['authorization'] = `AUTH ${accessToken}`;
                 // dispath success and set get new token timeout
                 dispatch(authSuccess(email));
+                dispatch(profileReset())
                 dispatch(updateAccessTokenTimeout(expirationPeriod));
 
             })

@@ -4,6 +4,7 @@
 export {
     saveProfile,
     getProfile,
+    profileReset,
 } from './profileActions';
 
 export {
