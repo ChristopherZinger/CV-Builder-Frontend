@@ -1,9 +1,9 @@
 import React from 'react';
-import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import ExperienceContainer from '../ExperienceContainer/ExperienceContainer';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
+import ExperienceFormTemplate from '../ExperienceFormTemplate/ExperienceFormTemplate';
 
 
 class ExperienceList extends React.Component {
@@ -35,9 +35,7 @@ class ExperienceList extends React.Component {
         const addBtnDisabled = this.state.showNewItemForm;
         // create Template for new Experience Item
         const addNewItem = (
-            <ExperienceForm key={"newItem"} data={{}} clearOnSave={this.handleSaveTemplate}>
-                <button onClick={this.handleAddItem} className={[gs.btn, gs.btnDisabled].join(' ')} > cancel </button>
-            </ExperienceForm>
+            <ExperienceFormTemplate clearOnSave={this.handleSaveTemplate} clickCancel={this.handleAddItem} />
         )
 
         const experienceNodes = (
