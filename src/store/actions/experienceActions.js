@@ -10,7 +10,7 @@ export const experienceStart = () => {
 export const experienceFail = (err) => {
     return {
         type: actionTypes.EXPERIENCE_FAIL,
-        errors: err.response.data.errors
+        errors: {}
     };
 };
 
