@@ -1,15 +1,13 @@
 import React from 'react';
 
 
+const CVElementsList = props => {
+    return (
+        <div>
+            Elemets
+        </div>
+    )
 
-class CVElementsList extends React.Component {
-    render() {
-        return (
-            <div>
-                Elemets
-            </div>
-        )
-    }
 }
 
 export default CVElementsList;

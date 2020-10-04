@@ -14,11 +14,9 @@ const CVLayout = () => {
                      and decide which informations should be displayed</p>
             </div>
 
-            <div className="row">
-                <div className="col">
-                    <CVDisplay />
-                </div>
-            </div>
+
+            <CVDisplay />
+
         </div>
     )
 }

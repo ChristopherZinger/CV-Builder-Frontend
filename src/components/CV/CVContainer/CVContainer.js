@@ -1,18 +1,22 @@
-
-import React from 'react';
+import React, { Fragment } from 'react';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
+import { formatDate } from '../../../utils/time/time';
+import moment from 'moment';
 
 
 const CVContainer = props => {
     const isLoading = props.cv ? false : true;
-
-
-
     return (
-        <div>
+        <Fragment>
             {
                 !isLoading ?
                     <div className={gs.myContainer}>
+                        <div>
+                            <h3>Profile</h3>
+                            <hr />
+                            <ProfileSection profile={props.cv.profile} />
+                        </div>
+                        <br /> <br />
                         <div>
                             <h3>Experience</h3>
                             <hr />
@@ -22,16 +26,33 @@ const CVContainer = props => {
                         <div>
                             <h3>Education</h3>
                             <hr />
-                            <EducationList list={props.cv.experience} />
+                            <EducationList list={props.cv.education} />
                         </div>
                     </div>
                     :
                     null
             }
-        </div>
+        </Fragment>
     )
 }
 
+const ProfileSection = props => {
+    return (
+        <div>
+            <div className="row">
+                <div className="col">
+                    <div>{props.profile.info.firstname + ' ' + props.profile.info.lastname}</div>
+                    <div>birth: {moment(props.profile.info.birthdate).format("dd MM YYYY")}</div>
+                </div>
+                <div className="col">
+                    <div>{props.profile.contact.email}</div>
+                    <div>{props.profile.address.city}</div>
+                    <div>{props.profile.address.street + ', ' + props.profile.address.number}</div>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 const ExperienceList = props => {
     return (
@@ -51,14 +72,14 @@ const ExperienceList = props => {
                         <div className="row">
                             <div className="col">
                                 <div>
-                                    From:  {exp.startDate}
+                                    From:  {formatDate(exp.startDate)}
                                 </div>
                                 <div>
-                                    To:  {exp.startDate}
+                                    To:  {formatDate(exp.startDate)}
                                 </div>
-
                             </div>
                         </div>
+                        <br />
                     </div>
                 )
             })}
@@ -88,14 +109,15 @@ const EducationList = props => {
                         <div className="row">
                             <div className="col">
                                 <div>
-                                    From:  {edu.startDate}
+                                    From:  {formatDate(edu.startDate)}
                                 </div>
                                 <div>
-                                    To:  {edu.startDate}
+                                    To:  {formatDate(edu.startDate)}
                                 </div>
 
                             </div>
                         </div>
+                        <br />
                     </div>
                 )
             })}

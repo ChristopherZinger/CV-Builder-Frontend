@@ -5,8 +5,6 @@ import * as gs from '../../_globalStyles/globalStyles.module.css';
 const CVList = props => {
     return (
         <div>
-            {/* Add CV btn */}
-            <button onClick={props.addCV} className={[gs.btn, gs.btnPrimary].join(' ')}>Generate New CV</button>
 
             {/* List of CVs */}
             <h3>My CV List: </h3>

@@ -1,11 +1,12 @@
 
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import CVContainer from '../CVContainer/CVContainer';
 import CVElementsList from '../CVElementsList/CVElementsList'
 import { connect } from 'react-redux';
 import CVList from '../CVList/CVList';
 import * as actions from '../../../store/actions/index';
+import * as gs from '../../_globalStyles/globalStyles.module.css';
 
 class CVDisplay extends React.Component {
     constructor(props) {
@@ -49,24 +50,19 @@ class CVDisplay extends React.Component {
         const isLoading = this.allIsLoaded();
 
         const cvElements = (
-            <div className="row">
-                <div className="col-3">
-                    <CVElementsList />
+            <div >
+                <div className={gs.defaultContainer}>
+                    <button onClick={this.handleCreateCV} className={[gs.btn, gs.btnPrimary].join(' ')}>Generate New CV</button>
                 </div>
-                <div className="col-6">
-                    <CVContainer cv={this.state.currentCV} />
-                </div>
-                <div className="col-3">
-                    <CVList cvList={this.props.cvList} addCV={this.handleCreateCV} />
-                </div>
+                <CVContainer cv={this.state.currentCV} />
             </div>
         )
 
         const content = isLoading ? <div>loading ...</div> : cvElements;
         return (
-            <div>
+            <Fragment>
                 { content}
-            </div>
+            </Fragment >
         )
     }
 }
