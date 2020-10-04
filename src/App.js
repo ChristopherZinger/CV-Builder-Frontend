@@ -17,6 +17,7 @@ import Logout from './components/Auth/Logout/Logout';
 import ProfileLayout from './components/Profile/ProfileLayout/ProfileLayout';
 import ExperienceLayout from './components/Experience/ExperienceLayout/ExperienceLayout';
 import EducationLayout from './components/Education/EducationLayout/EducationLayout';
+import CVLayout from './components/CV/CVLayout/CVLayout';
 
 const Layout = () => {
   return (
@@ -30,6 +31,7 @@ const Layout = () => {
           <Route path="/profile" component={ProfileLayout} />
           <Route path="/experience" component={ExperienceLayout} />
           <Route path="/education" component={EducationLayout} />
+          <Route path="/cv-list" component={CVLayout} />
         </Switch>
       </div>
     </Router>
