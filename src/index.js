@@ -11,6 +11,7 @@ import thunk from 'redux-thunk';
 import authReducer from './store/reducers/authReducer';
 import profileReducers from './store/reducers/profileReducers';
 import experienceReducers from './store/reducers/experienceReducers';
+import educationReducers from './store/reducers/educationReducers';
 
 // axios global settings 
 axios.defaults.headers.common['authorization'] = 'AUTH TOKEN';
@@ -23,7 +24,10 @@ axios.defaults.withCredentials = true;
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // reducers
-const rootReducer = combineReducers({ authReducer, profileReducers, experienceReducers })
+const rootReducer = combineReducers({
+  authReducer, profileReducers,
+  experienceReducers, educationReducers
+})
 
 // create store
 const store = createStore(
