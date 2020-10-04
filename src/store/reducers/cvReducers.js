@@ -15,7 +15,6 @@ const cvStart = (state, action) => {
 }
 
 const cvSuccess = (state, action) => {
-    console.log('[cvReducers] cussecc: ', action)
     return ({
         ...state,
         isLoading: false,

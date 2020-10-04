@@ -1,8 +1,7 @@
 import React from 'react';
-// import EducationList from '../EducationList/EducationList';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
 import CVDisplay from '../CVDisplay/CVDisplay';
-import CVList from '../CVList/CVList';
+
 
 const CVLayout = () => {
     return (
@@ -16,10 +15,7 @@ const CVLayout = () => {
             </div>
 
             <div className="row">
-                <div className="col-3">
-                    <CVList />
-                </div>
-                <div className="col-9">
+                <div className="col">
                     <CVDisplay />
                 </div>
             </div>
