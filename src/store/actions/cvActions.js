@@ -38,15 +38,15 @@ export const cvSuccess = (data) => {
 //     };
 // };
 
-export const getCV = () => {
+export const getCVList = () => {
     return dispatch => {
         dispatch(cvStart());
-        axios.get('get-cv-list/')
+        axios.get('/get-cv-list')
             .then(res => {
-                // res.date should be a list of positions
                 dispatch(cvSuccess(res.data));
             })
             .catch(err => {
+
                 dispatch(cvFail(err))
             });
     };

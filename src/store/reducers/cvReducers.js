@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     isLoading: false,
-    cvList =[],
+    cvList: [],
     errors: {}
 };
 
@@ -15,10 +15,11 @@ const cvStart = (state, action) => {
 }
 
 const cvSuccess = (state, action) => {
+    console.log('[cvReducers] cussecc: ', action)
     return ({
         ...state,
         isLoading: false,
-        cvList: data,
+        cvList: action.data,
         errors: {}
     })
 }

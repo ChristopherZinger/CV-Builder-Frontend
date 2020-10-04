@@ -1,5 +1,9 @@
 
 
+export {
+    getCVList,
+} from './cvActions';
+
 
 export {
     saveProfile,

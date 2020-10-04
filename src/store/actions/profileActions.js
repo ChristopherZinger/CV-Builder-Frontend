@@ -31,9 +31,6 @@ export const profileReset = () => {
 export const saveProfile = (data) => {
     return dispatch => {
         dispatch(profileStart());
-        console.log(
-            '[profileActions.js] header token: ', axios.defaults.headers.common['authorization']
-        )
         axios.post('save-profile/', data)
             .then(res => {
                 dispatch(profileSuccess(res.data));
@@ -48,9 +45,6 @@ export const saveProfile = (data) => {
 export const getProfile = () => {
     return dispatch => {
         dispatch(profileStart());
-        console.log(
-            '[profileActions.js] header token: ', axios.defaults.headers.common['authorization']
-        )
         axios.get('get-profile/')
             .then(res => {
                 dispatch(profileSuccess(res.data));
