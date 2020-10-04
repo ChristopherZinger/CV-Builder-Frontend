@@ -5,11 +5,16 @@ import * as gs from '../../_globalStyles/globalStyles.module.css';
 const CVList = props => {
     return (
         <div>
-            <button className={[gs.btn, gs.btnPrimary].join(' ')}>Generate New CV</button>
+            {/* Add CV btn */}
+            <button onClick={props.addCV} className={[gs.btn, gs.btnPrimary].join(' ')}>Generate New CV</button>
+
+            {/* List of CVs */}
             <h3>My CV List: </h3>
             { props.cvList.map(cv => {
                 return <CVItem key={cv._id} cv={cv} />
             })}
+
+            {/* you dont have cv yet */}
             {
                 props.cvList.length < 1
                     ? <p>You dont have any cv yet. Generate one with the button above.</p>
