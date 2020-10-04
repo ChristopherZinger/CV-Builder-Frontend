@@ -13,6 +13,12 @@ export {
 } from './experienceActions';
 
 export {
+    saveEducation,
+    getEducation,
+    removeEducation,
+} from './educationActions';
+
+export {
     auth,
     logout,
     updateToken
