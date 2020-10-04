@@ -57,7 +57,7 @@ export const getEducation = () => {
 export const removeEducation = (id) => {
     return dispatch => {
         dispatch(educationStart());
-        const url = 'remove-education/?expID=' + id;
+        const url = 'remove-education/?eduID=' + id;
         axios.get(url)
             .then(res => {
                 dispatch(educationSuccess(res.data));

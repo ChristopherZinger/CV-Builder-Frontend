@@ -26,3 +26,8 @@ export const EDUCATION_START = 'EDUCATION_START';
 export const EDUCATION_FAIL = 'EDUCATION_FAIL';
 export const EDUCATION_SUCCESS = 'EDUCATION_SUCCESS';
 
+// CV
+export const CV_START = 'CV_START';
+export const CV_FAIL = 'CV_FAIL';
+export const CV_SUCCESS = 'CV_SUCCESS';
+
