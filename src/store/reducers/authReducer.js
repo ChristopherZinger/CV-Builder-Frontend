@@ -56,6 +56,7 @@ const authLogoutSuccess = (state, action) => {
         isLoading: false,
         email: null,
         isAuthenticated: false,
+        accessToken: null,
         errors: {}
     })
 }
