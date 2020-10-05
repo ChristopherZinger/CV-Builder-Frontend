@@ -66,10 +66,34 @@
     color: gray;
 }
 
+.btnSquare{
+    min-width:10px;
+    border: 2px solid coral;
+    background-color: none;
+    color: coral;
+}
+
 .myContainer input {
     margin:0px 0px 25px 0px;
     padding: 7px 0px;
 }
+
+.hrBold{
+    border-top: 1px solid lightgray;
+}
+
+
+
+.p  *{
+    display: inline;
+}
+
+.p a{
+    padding-left:5px;
+    padding-right: 5px;
+    text-decoration: underline;;
+}
+
 
 
 
