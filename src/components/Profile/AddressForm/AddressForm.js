@@ -41,7 +41,7 @@ class AddressForm extends React.Component {
         return (
 
             < div className={gs.myContainer} >
-                <h2>Profile</h2>
+                <h2>Address</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="row">
                         <div className="col">
