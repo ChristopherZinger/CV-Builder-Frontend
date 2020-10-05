@@ -1,5 +1,5 @@
 import React from 'react'
-import * as gs from '../../_globalStyles/globalStyles.module.css';
+// import * as gs from '../../_globalStyles/globalStyles.module.css';
 
 
 const CVList = props => {

@@ -2,9 +2,9 @@
 
 import React, { Fragment } from 'react';
 import CVContainer from '../CVContainer/CVContainer';
-import CVElementsList from '../CVElementsList/CVElementsList'
+// import CVElementsList from '../CVElementsList/CVElementsList'
 import { connect } from 'react-redux';
-import CVList from '../CVList/CVList';
+// import CVList from '../CVList/CVList';
 import * as actions from '../../../store/actions/index';
 import * as gs from '../../_globalStyles/globalStyles.module.css';
 

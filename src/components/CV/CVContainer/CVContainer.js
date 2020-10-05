@@ -37,6 +37,12 @@ const CVContainer = props => {
 }
 
 const ProfileSection = props => {
+    const email = props.profile.contact.filter(c => c.type === "email")[0];
+    const contactElements = props.profile.contact.map(c => {
+        if (!c._id) return null;
+        return <div key={c._id}>{c.type + ': ' + c.value}</div>
+    })
+
     return (
         <div>
             <div className="row">
@@ -45,9 +51,12 @@ const ProfileSection = props => {
                     <div>birth: {moment(props.profile.info.birthdate).format("dd MM YYYY")}</div>
                 </div>
                 <div className="col">
-                    <div>{props.profile.contact.email}</div>
+                    <div>email: {email.value}</div>
                     <div>{props.profile.address.city}</div>
                     <div>{props.profile.address.street + ', ' + props.profile.address.number}</div>
+                </div>
+                <div className="col">
+                    {contactElements}
                 </div>
             </div>
         </div>
