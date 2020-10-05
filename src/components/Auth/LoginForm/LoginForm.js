@@ -1,71 +1,65 @@
 import React, { Fragment } from 'react';
 import AuthForm from '../AuthForm/AuthForm';
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
 
-class LoginForm extends React.Component {
-    render() {
-        const inputs = []
+const LoginForm = props => {
+    // redirect after login
+    if (props.isAuthenticated) props.history.push('/');
 
-        // add email field
-        inputs.push({
-            input: {
-                id: "email",
-                name: "email",
-                type: "email",
-                placeholder: "Email",
-                classes: [],
-            },
-            label: {
-                txt: "Email"
-            },
-            info: {
-                classes: []
-            }
-        })
+    const inputs = []
 
-        // add password field
-        inputs.push({
-            input: {
-                id: "password",
-                name: "password",
-                type: "password",
-                placeholder: "Password",
-                classes: [],
-            },
-            label: {
-                txt: "Password"
-            },
-            info: {
-                classes: []
-            }
-        })
-
-        const submit = {
-            txt: 'login',
-            isSignup: false
+    // add email field
+    inputs.push({
+        input: {
+            id: "email",
+            name: "email",
+            type: "email",
+            placeholder: "Email",
+            classes: [],
+        },
+        label: {
+            txt: "Email"
+        },
+        info: {
+            classes: []
         }
+    })
 
-        const reidrect = this.props.isAuthenticated
-            ? <Redirect to="/" />
-            : null;
+    // add password field
+    inputs.push({
+        input: {
+            id: "password",
+            name: "password",
+            type: "password",
+            placeholder: "Password",
+            classes: [],
+        },
+        label: {
+            txt: "Password"
+        },
+        info: {
+            classes: []
+        }
+    })
 
-
-        return (
-            <Fragment>
-                {reidrect}
-                <AuthForm
-                    submit={submit}
-                    inputs={inputs}
-                >
-                    <h4>Login</h4>
-                    <p>Login to your CV builder with your email and password.</p>
-                </AuthForm>
-            </Fragment>
-        )
+    const submit = {
+        txt: 'login',
+        isSignup: false
     }
+
+    return (
+        <Fragment>
+            <AuthForm
+                submit={submit}
+                inputs={inputs}
+            >
+                <h4>Login</h4>
+                <p>Login to your CV builder with your email and password.</p>
+            </AuthForm>
+        </Fragment>
+    )
 }
 
 
