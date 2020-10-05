@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -38,11 +38,18 @@ const Layout = props => {
           <Route path="/signup" component={SignupForm} />
           <Route path="/login" component={LoginForm} />
 
-          <Route path="/logout" component={Logout} />
-          <Route path="/profile" component={ProfileLayout} />
-          <Route path="/experience" component={ExperienceLayout} />
-          <Route path="/education" component={EducationLayout} />
-          <Route path="/cv-list" component={CVLayout} />
+          {
+            props.isAuth
+              ? <Fragment>
+                <Route path="/logout" component={Logout} />
+                <Route path="/profile" component={ProfileLayout} />
+                <Route path="/experience" component={ExperienceLayout} />
+                <Route path="/education" component={EducationLayout} />
+                <Route path="/cv-list" component={CVLayout} />
+              </Fragment>
+              : null
+          }
+
 
           <Route path="/missing" component={_404} />
 
