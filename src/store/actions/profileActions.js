@@ -54,3 +54,17 @@ export const getProfile = () => {
             });
     }
 };
+
+export const removeContact = (id) => {
+    return dispatch => {
+        dispatch(profileStart());
+        const url = 'remove-contact/?id=' + id;
+        axios.get(url)
+            .then(res => {
+                dispatch(profileSuccess(res.data));
+            })
+            .catch(err => {
+                dispatch(profileFail(err))
+            });
+    }
+};

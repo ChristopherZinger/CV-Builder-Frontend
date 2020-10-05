@@ -4,7 +4,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     isLoading: false,
     info: {},
-    contact: {},
+    contact: [],
     address: {},
     errors: {}
 };
@@ -41,7 +41,7 @@ const profileReset = (state, action) => {
     return ({
         isLoading: false,
         info: {},
-        contact: {},
+        contact: [],
         address: {},
         errors: {}
     })
