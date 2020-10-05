@@ -9,6 +9,7 @@ export {
     saveProfile,
     getProfile,
     profileReset,
+    removeContact
 } from './profileActions';
 
 export {
